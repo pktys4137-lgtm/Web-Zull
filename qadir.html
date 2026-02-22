@@ -1,0 +1,255 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qadir Al-Fateh | Before SAPD</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #facc15;
+      --blue: #38bdf8;
+      --dark: #020617;
+      --green: #22c55e;
+    }* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top, #020617, #000000);
+  color: #e5e7eb;
+  overflow-x: hidden;
+}
+
+/* ====== HANGING LANTERNS ====== */
+.lanterns {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 140px;
+  pointer-events: none;
+  background: url('data:image/svg+xml;utf8,\
+  <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 140\">\
+    <defs>\
+      <linearGradient id=\"g\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\
+        <stop offset=\"0%\" stop-color=\"%23facc15\"/>\
+        <stop offset=\"100%\" stop-color=\"%23fde68a\"/>\
+      </linearGradient>\
+    </defs>\
+    <path d=\"M0,40 C200,80 400,0 600,40 800,80 1000,0 1200,40\" stroke=\"%23facc15\" stroke-width=\"2\" fill=\"none\"/>\
+    <g fill=\"url(%23g)\" stroke=\"%23facc15\" stroke-width=\"2\">\
+      <circle cx=\"120\" cy=\"80\" r=\"16\"/>\
+      <circle cx=\"300\" cy=\"60\" r=\"14\"/>\
+      <circle cx=\"480\" cy=\"85\" r=\"18\"/>\
+      <circle cx=\"660\" cy=\"65\" r=\"15\"/>\
+      <circle cx=\"840\" cy=\"90\" r=\"19\"/>\
+      <circle cx=\"1020\" cy=\"70\" r=\"16\"/>\
+    </g>\
+  </svg>');
+  background-size: cover;
+  animation: sway 6s ease-in-out infinite;
+  z-index: 9;
+}
+
+@keyframes sway { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
+
+header {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.9)),
+    url('https://images.unsplash.com/photo-1549640376-9e0b8b1d3c63');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(250,204,21,.15), transparent 60%);
+  pointer-events: none;
+}
+
+/* ====== KETUPAT ORNAMENT ====== */
+.ketupat {
+  position: absolute;
+  width: 70px; height: 70px;
+  border: 2px solid rgba(250,204,21,.8);
+  transform: rotate(45deg);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(250,204,21,.35);
+  animation: float 7s ease-in-out infinite;
+  background: linear-gradient(135deg, rgba(34,197,94,.25), rgba(250,204,21,.15));
+}
+.ketupat::before, .ketupat::after{
+  content:"";
+  position:absolute; inset:10px;
+  border:1px dashed rgba(250,204,21,.6);
+  border-radius:8px;
+}
+.k1{ top:15%; left:8%; animation-delay:0s }
+.k2{ top:22%; right:10%; animation-delay:1.5s }
+.k3{ bottom:18%; left:12%; animation-delay:3s }
+.k4{ bottom:22%; right:14%; animation-delay:4.5s }
+
+.hero {
+  position: relative;
+  z-index: 2;
+  animation: fadeIn 2s ease;
+}
+
+.hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 3.6rem;
+  letter-spacing: 6px;
+  margin: 0;
+  color: var(--gold);
+  text-shadow: 0 0 24px rgba(250,204,21,.6);
+}
+
+.hero p {
+  margin-top: 12px;
+  letter-spacing: 3px;
+  color: #cbd5f5;
+}
+
+.ornament {
+  margin: 25px auto 0;
+  width: 240px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+section {
+  max-width: 980px;
+  margin: auto;
+  padding: 90px 20px;
+  line-height: 1.95;
+  position: relative;
+}
+
+section::before {
+  content: "☪";
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 42px;
+  color: rgba(250,204,21,.25);
+}
+
+h2 {
+  font-family: 'Cinzel', serif;
+  color: var(--gold);
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
+  border: 1px solid rgba(250,204,21,.25);
+  border-radius: 22px;
+  padding: 28px;
+  margin-bottom: 35px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.6);
+  animation: fadeUp 1.5s ease;
+}
+
+.quote {
+  margin-top: 50px;
+  padding: 30px;
+  border-left: 4px solid var(--gold);
+  background: rgba(255,255,255,0.04);
+  font-style: italic;
+  color: #fde68a;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(250,204,21,.2);
+}
+
+footer {
+  text-align: center;
+  padding: 35px 20px;
+  color: #94a3b8;
+  border-top: 1px solid rgba(250,204,21,.25);
+  background: linear-gradient(180deg, transparent, rgba(250,204,21,.06));
+}
+
+.moon {
+  position: fixed;
+  top: 60px;
+  right: 40px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff, #facc15);
+  box-shadow: 0 0 34px rgba(250,204,21,.65);
+  opacity: .85;
+  animation: float 6s ease-in-out infinite;
+  z-index: 8;
+}
+
+@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+@keyframes fadeUp { from {opacity:0; transform: translateY(40px);} to {opacity:1; transform: translateY(0);} }
+@keyframes float { 0%,100% {transform: translateY(0);} 50% {transform: translateY(-14px);} }
+
+@media (max-width: 600px) {
+  .hero h1 { font-size: 2.5rem; letter-spacing: 3px; }
+  section { padding: 70px 15px; }
+  .ketupat{ display:none }
+}
+
+  </style>
+</head>
+<body><div class="lanterns"></div>
+<div class="moon"></div><header>
+  <span class="ketupat k1"></span>
+  <span class="ketupat k2"></span>
+  <span class="ketupat k3"></span>
+  <span class="ketupat k4"></span>  <div class="hero">
+    <h1>QADIR AL-FATEH</h1>
+    <div class="ornament"></div>
+    <p>Before The Badge • Ramadan Cinematic Theme</p>
+  </div>
+</header><section>
+  <h2>Awal Kehidupan</h2>
+  <div class="card">
+    <p>
+      Qadir Al-Fateh terlahir sebagai putra dari keluarga sultan Arab dengan pengaruh besar dalam dunia bisnis
+      dan perdagangan. Ia tumbuh dalam kemewahan, disiplin, serta kehormatan. Sejak kecil, Qadir ditempa
+      dengan pendidikan keras, strategi kepemimpinan, dan nilai keimanan yang kuat.
+    </p>
+  </div>  <div class="card">
+    <p>
+      Namun takdir memutar arah hidupnya. Sebuah konspirasi bisnis dan pengkhianatan internal menghancurkan
+      seluruh usaha keluarganya. Dalam waktu singkat, istana berubah menjadi puing, dan kehormatan menjadi
+      kenangan.
+    </p>
+  </div>  <h2>Tragedi Usia 16 Tahun</h2>
+  <div class="card">
+    <p>
+      Saat berusia 16 tahun, Qadir kehilangan kedua orang tuanya dalam sebuah insiden misterius. Dalam satu
+      malam, ia kehilangan keluarga, kekayaan, dan masa depan yang telah disiapkan sejak lahir. Kesunyian
+      menjadi sahabatnya, dan kesabaran menjadi senjatanya.
+    </p>
+  </div>  <h2>Kebangkitan</h2>
+  <div class="card">
+    <p>
+      Di bawah cahaya bulan Ramadan, Qadir memulai hidup baru di Los Santos. Ia melatih fisik, mental,
+      dan jiwanya. Lari malam, latihan bela diri, serta pendalaman iman menjadi rutinitas. Dari pangeran
+      yang jatuh, lahirlah pejuang yang ditempa oleh penderitaan.
+    </p>
+  </div>  <div class="quote">
+    “Aku pernah hidup di puncak, lalu dijatuhkan ke dasar. Kini aku bangkit — bukan untuk berkuasa,
+    tapi untuk menjaga kehormatan dan menegakkan keadilan.”
+  </div>
+</section><footer>
+  &copy; 2026 Qadir Al-Fateh | Ramadan Cinematic Character Story
+</footer></body>
+</html>
